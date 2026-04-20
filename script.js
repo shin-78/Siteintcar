@@ -148,7 +148,7 @@ const statsObserver = new IntersectionObserver((entries) => {
       const stats = entry.target.querySelectorAll('.stat-num');
       stats.forEach(stat => {
         const text = stat.textContent;
-        if (text.includes('8.000')) animateCounter(stat, 8000, '');
+        if (text.includes('67.000')) animateCounter(stat, 67000, '');
         else if (text.includes('98')) animateCounter(stat, 98, '%');
         else if (text.includes('24')) { /* static */ }
       });
