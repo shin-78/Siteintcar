@@ -217,7 +217,8 @@ body {
   font-weight: 800;
   font-size: 1.3rem;
   color: var(--white);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .logo-accent { color: var(--green-light); }
@@ -584,7 +585,7 @@ body {
 
 .veiculo-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   margin-top: 16px;
 }
@@ -649,6 +650,16 @@ body {
   font-weight: 700;
   padding: 3px 10px;
   border-radius: var(--radius-pill);
+}
+
+.veiculo-badge-green {
+  background: var(--green-light);
+  color: var(--black);
+}
+
+.card-eletrico {
+  border-color: rgba(0,230,118,0.18);
+  background: rgba(0,230,118,0.04);
 }
 
 /* ===========================
@@ -1248,7 +1259,7 @@ body {
    RESPONSIVE
    =========================== */
 @media (max-width: 1024px) {
-  .veiculo-grid { grid-template-columns: repeat(3, 1fr); }
+  .veiculo-grid { grid-template-columns: repeat(5, 1fr); }
   .coberturas-grid { grid-template-columns: repeat(2, 1fr); }
   .sobre-grid { gap: 48px; }
 }
