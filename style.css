@@ -43,7 +43,50 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* SCROLLBAR */
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0,230,118,0.15));
+  transition: filter var(--transition);
+}
+
+.logo-img:hover {
+  filter: drop-shadow(0 0 14px rgba(0,230,118,0.3));
+}
+
+.logo-img-footer {
+  height: 56px;
+}
+
+/* ===========================
+   ANOS AVISO
+   =========================== */
+.anos-aviso {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(0,230,118,0.07);
+  border: 1px solid rgba(0,230,118,0.2);
+  border-radius: var(--radius-pill);
+  padding: 10px 22px;
+  margin: 0 auto 40px;
+  width: fit-content;
+}
+
+.anos-aviso svg {
+  color: var(--green-light);
+  flex-shrink: 0;
+}
+
+.anos-aviso strong {
+  color: var(--green-light);
+  font-weight: 700;
+}
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--dark); }
 ::-webkit-scrollbar-thumb { background: var(--green-dark); border-radius: 4px; }
