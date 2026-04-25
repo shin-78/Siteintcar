@@ -65,7 +65,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; color: var(
 .hero { background: var(--bg-light); padding: 160px 0 120px; position: relative; overflow: hidden; }
 .hero-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 48px; }
 .hero-content { flex: 1; max-width: 600px; }
-.hero-content p { font-size: 1.25rem; color: var(--text-gray); margin-bottom: 40px; font-weight: 400; }
+.hero-content p { font-size: 1.15rem; color: var(--text-gray); margin-bottom: 24px; font-weight: 400; }
+.hero-features { list-style: none; margin-bottom: 40px; }
+.hero-features li { display: flex; align-items: center; gap: 12px; font-size: 1.05rem; color: var(--text-dark); margin-bottom: 12px; font-weight: 600; }
+.hero-features li i { color: #00B259; font-size: 1.2rem; }
 .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
 .hero-image { flex: 1; position: relative; display: flex; justify-content: flex-end; }
 .hero-image img { width: 100%; max-width: 600px; border-radius: 24px; box-shadow: var(--shadow-lg); object-fit: cover; }
