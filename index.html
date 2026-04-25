@@ -32,7 +32,7 @@
   <header class="header" id="header">
     <div class="container nav-container">
       <a href="#" class="logo">
-        <img src="logo.png" alt="INTCAR" />
+        <img src="logo.png" alt="INTCAR" style="filter: invert(1); height: 40px;"/> <!-- invert to make it dark if the original is white -->
       </a>
       <nav class="nav-links">
         <a href="#sobre">Por que INTCAR?</a>
@@ -46,43 +46,34 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <video class="hero-video-bg" autoplay muted loop playsinline>
-      <source src="hero-video.mp4" type="video/mp4" />
-    </video>
-    
+  <!-- HERO (SOLID GREEN) -->
+  <section class="hero-green">
     <div class="container">
-      <div class="hero-content">
-        <div class="section-badge"><i class="fas fa-shield-alt"></i> Proteção Veicular Premium</div>
-        <h1 class="title-xl">
-          Imprevistos acontecem.<br />
-          <span class="text-gradient">Estar protegido</span> é uma escolha.
-        </h1>
-        <p>Ativação 100% digital, sem burocracia e com suporte humano de verdade. A proteção que seu veículo merece, com a praticidade que você precisa.</p>
-        
-        <div class="hero-cta">
-          <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-primary">
-            <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Ative em minutos pelo WhatsApp
-          </a>
-          <a href="#funciona" class="btn btn-outline">
-            Ver como funciona
-          </a>
-        </div>
+      <div class="section-badge"><i class="fas fa-shield-alt"></i> Proteção Premium</div>
+      <h1 class="title-xl">
+        Imprevistos acontecem.<br />
+        Estar protegido é uma escolha.
+      </h1>
+      <p>Ativação 100% digital, sem burocracia e com suporte humano de verdade. A proteção que seu veículo merece, com a praticidade que você precisa.</p>
+      
+      <div class="hero-cta">
+        <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-dark">
+          <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Ative em minutos pelo WhatsApp
+        </a>
+      </div>
 
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-value" id="stat-vehicles">67.000+</div>
-            <div class="stat-label">Veículos Protegidos</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value">24h</div>
-            <div class="stat-label">Atendimento Rápido</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value" id="stat-rating">98%</div>
-            <div class="stat-label">Aprovação</div>
-          </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-value" id="stat-vehicles">67.000+</div>
+          <div class="stat-label">Veículos Protegidos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">24h</div>
+          <div class="stat-label">Atendimento Rápido</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="stat-rating">98%</div>
+          <div class="stat-label">Aprovação</div>
         </div>
       </div>
     </div>
@@ -92,7 +83,7 @@
   <section id="sobre" class="section">
     <div class="container">
       <div class="text-center">
-        <div class="section-badge">Diferenciais</div>
+        <div class="section-badge" style="background: var(--primary-light); color: #00994E;">Diferenciais</div>
         <h2 class="title-lg">Por que a INTCAR está conquistando o Brasil?</h2>
         <p class="text-muted mt-8" style="max-width: 600px; margin: 16px auto 0;">Esqueça a burocracia das seguradoras tradicionais. Criamos um modelo mais inteligente, rápido e focado em você.</p>
       </div>
@@ -123,10 +114,10 @@
   </section>
 
   <!-- COBERTURAS -->
-  <section id="coberturas" class="section" style="background-color: var(--bg-card);">
+  <section id="coberturas" class="section bg-alt">
     <div class="container">
       <div class="text-center">
-        <div class="section-badge">Proteção Total</div>
+        <div class="section-badge" style="background: var(--primary-light); color: #00994E;">Proteção Total</div>
         <h2 class="title-lg">Tudo que você precisa em um só lugar</h2>
       </div>
 
@@ -166,11 +157,11 @@
             <p>Fique tranquilo, garantimos um carro extra enquanto o seu está arrumando.</p>
           </div>
         </div>
-        <div class="cobertura-item" style="border-color: var(--primary); background: rgba(0,230,118,0.05);">
+        <div class="cobertura-item" style="border-color: var(--primary); background: var(--primary-light);">
           <i class="fab fa-whatsapp fa-2x"></i>
           <div class="cobertura-content">
-            <h4 style="color: var(--primary);">Montar meu plano</h4>
-            <a href="https://wa.me/5511988088214" target="_blank" style="color: #fff; text-decoration: underline; font-size: 0.9rem;">Falar com consultor &rarr;</a>
+            <h4 style="color: #00994E;">Montar meu plano</h4>
+            <a href="https://wa.me/5511988088214" target="_blank" style="color: var(--text-main); text-decoration: underline; font-weight: 600; font-size: 0.95rem;">Falar com consultor &rarr;</a>
           </div>
         </div>
       </div>
@@ -181,7 +172,7 @@
   <section id="funciona" class="section">
     <div class="container">
       <div class="text-center">
-        <div class="section-badge">Simples e Rápido</div>
+        <div class="section-badge" style="background: var(--primary-light); color: #00994E;">Simples e Rápido</div>
         <h2 class="title-lg">Ative sua proteção em minutos</h2>
       </div>
 
@@ -218,10 +209,10 @@
   </section>
 
   <!-- DEPOIMENTOS -->
-  <section id="depoimentos" class="section" style="background-color: var(--bg-card);">
+  <section id="depoimentos" class="section bg-alt">
     <div class="container">
       <div class="text-center">
-        <div class="section-badge">Prova Social</div>
+        <div class="section-badge" style="background: var(--primary-light); color: #00994E;">Prova Social</div>
         <h2 class="title-lg">Quem confia, recomenda.</h2>
       </div>
 
@@ -266,11 +257,13 @@
   <!-- CTA FINAL -->
   <section class="cta-section">
     <div class="container">
-      <h2 class="title-xl mb-4">Pronto para rodar <span class="text-gradient">tranquilo?</span></h2>
-      <p class="text-muted mb-8" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px;">Fale com a gente agora, sem compromisso, e veja como é fácil e barato proteger seu patrimônio.</p>
-      <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-primary" style="transform: scale(1.1);">
-        <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Fazer cotação gratuita
-      </a>
+      <div class="cta-box">
+        <h2 class="title-xl mb-4">Pronto para rodar tranquilo?</h2>
+        <p class="mb-8">Fale com a gente agora, sem compromisso, e veja como é fácil e barato proteger seu patrimônio.</p>
+        <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-dark" style="transform: scale(1.1);">
+          <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Fazer cotação gratuita
+        </a>
+      </div>
     </div>
   </section>
 
@@ -279,11 +272,12 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="logo.png" alt="INTCAR" style="height: 48px;" />
+          <!-- invert to make it dark if original logo is white -->
+          <img src="logo.png" alt="INTCAR" style="filter: invert(1); height: 48px;" />
           <p>A proteção veicular inteligente para quem valoriza tempo, dinheiro e segurança.</p>
         </div>
         <div>
-          <h4 class="footer-title">Links Úteis</h4>
+          <h4 class="title-md mb-4" style="font-size: 1.1rem;">Links Úteis</h4>
           <div class="footer-links">
             <a href="#sobre">Por que INTCAR?</a>
             <a href="#coberturas">Nossas Coberturas</a>
@@ -292,7 +286,7 @@
           </div>
         </div>
         <div>
-          <h4 class="footer-title">Contato</h4>
+          <h4 class="title-md mb-4" style="font-size: 1.1rem;">Contato</h4>
           <div class="footer-links">
             <a href="https://wa.me/5511988088214" target="_blank"><i class="fab fa-whatsapp"></i> (11) 98808-8214</a>
             <a href="https://instagram.com/_intcar_" target="_blank"><i class="fab fa-instagram"></i> @_intcar_</a>
