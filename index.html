@@ -32,7 +32,7 @@
   <header class="header" id="header">
     <div class="container nav-container">
       <a href="#" class="logo">
-        <img src="logo.png" alt="INTCAR" style="filter: invert(1); height: 40px;"/> <!-- invert to make it dark if the original is white -->
+        <img src="logo.png" alt="INTCAR" /> <!-- FILTER REMOVIDO -->
       </a>
       <nav class="nav-links">
         <a href="#sobre">Por que INTCAR?</a>
@@ -40,44 +40,55 @@
         <a href="#funciona">Como Funciona</a>
         <a href="#depoimentos">Depoimentos</a>
       </nav>
-      <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">
-        <i class="fab fa-whatsapp" style="font-size: 1.1rem;"></i> Cotação Rápida
+      <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.95rem;">
+        <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Cotação Rápida
       </a>
     </div>
   </header>
 
-  <!-- HERO (SOLID GREEN) -->
-  <section class="hero-green">
+  <!-- HERO (SOLID GREEN WITH IMAGE) -->
+  <section class="hero-section">
     <div class="container">
-      <div class="section-badge"><i class="fas fa-shield-alt"></i> Proteção Premium</div>
-      <h1 class="title-xl">
-        Imprevistos acontecem.<br />
-        Estar protegido é uma escolha.
-      </h1>
-      <p>Ativação 100% digital, sem burocracia e com suporte humano de verdade. A proteção que seu veículo merece, com a praticidade que você precisa.</p>
-      
-      <div class="hero-cta">
-        <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-dark">
-          <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Ative em minutos pelo WhatsApp
-        </a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-value" id="stat-vehicles">67.000+</div>
-          <div class="stat-label">Veículos Protegidos</div>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="section-badge"><i class="fas fa-star"></i> Proteção Premium</div>
+          <h1 class="title-xl">
+            Imprevistos acontecem.<br />
+            Estar protegido é uma escolha.
+          </h1>
+          <p>Ativação 100% digital, sem burocracia e com suporte humano de verdade. Aceitamos todos os modelos de carros.</p>
+          
+          <div style="display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
+            <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-dark">
+              <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Ativar proteção agora
+            </a>
+          </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-value">24h</div>
-          <div class="stat-label">Atendimento Rápido</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="stat-rating">98%</div>
-          <div class="stat-label">Aprovação</div>
+        <div class="hero-image">
+          <!-- Unsplash Image mimicking Loovi's visual style -->
+          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="Carro Protegido INTCAR" />
         </div>
       </div>
     </div>
   </section>
+
+  <!-- STATS OVERLAPPING HERO -->
+  <div class="container">
+    <div class="hero-stats-box">
+      <div class="stat-item">
+        <div class="stat-value" id="stat-vehicles">67.000+</div>
+        <div class="stat-label">Veículos Protegidos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">24h</div>
+        <div class="stat-label">Atendimento Rápido</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="stat-rating">98%</div>
+        <div class="stat-label">Aprovação</div>
+      </div>
+    </div>
+  </div>
 
   <!-- POR QUE INTCAR -->
   <section id="sobre" class="section">
@@ -85,29 +96,37 @@
       <div class="text-center">
         <div class="section-badge" style="background: var(--primary-light); color: #00994E;">Diferenciais</div>
         <h2 class="title-lg">Por que a INTCAR está conquistando o Brasil?</h2>
-        <p class="text-muted mt-8" style="max-width: 600px; margin: 16px auto 0;">Esqueça a burocracia das seguradoras tradicionais. Criamos um modelo mais inteligente, rápido e focado em você.</p>
+        <p class="text-muted mt-8" style="max-width: 600px; margin: 16px auto 0; font-size: 1.1rem;">Esqueça a burocracia das seguradoras tradicionais. Criamos um modelo mais inteligente, rápido e focado em você.</p>
       </div>
 
-      <div class="benefits-grid">
-        <div class="card">
-          <div class="icon-wrapper"><i class="fas fa-user-headset"></i></div>
-          <h3 class="title-md">Atendimento Humanizado</h3>
-          <p>Nada de robôs infinitos. Quando você precisa, fala direto com um especialista focado em resolver seu problema rapidamente.</p>
+      <div class="image-section">
+        <div>
+          <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80" alt="Cliente usando aplicativo" style="border-radius: 24px; object-fit: cover; height: 500px;" />
         </div>
-        <div class="card">
-          <div class="icon-wrapper"><i class="fas fa-bolt"></i></div>
-          <h3 class="title-md">Zero Burocracia</h3>
-          <p>Processo de adesão 100% digital. Você faz a vistoria pelo seu próprio celular e sai protegido no mesmo dia.</p>
-        </div>
-        <div class="card">
-          <div class="icon-wrapper"><i class="fas fa-wallet"></i></div>
-          <h3 class="title-md">Preço Justo</h3>
-          <p>Cobertura completa com mensalidades que cabem no seu bolso, sem taxas surpresas ou letrinhas miúdas.</p>
-        </div>
-        <div class="card">
-          <div class="icon-wrapper"><i class="fas fa-car-side"></i></div>
-          <h3 class="title-md">Para Todo Veículo</h3>
-          <p>Aceitamos carros, motos, SUVs e utilitários de até 30 anos, incluindo veículos de aplicativo.</p>
+        <div>
+          <div class="benefits-grid" style="grid-template-columns: 1fr; margin-top: 0; gap: 20px;">
+            <div class="card" style="flex-direction: row; align-items: center; gap: 24px; padding: 24px;">
+              <div class="icon-wrapper" style="margin-bottom: 0; flex-shrink: 0;"><i class="fas fa-user-headset"></i></div>
+              <div>
+                <h3 class="title-md" style="font-size: 1.1rem;">Atendimento Humanizado</h3>
+                <p>Nada de robôs. Fale direto com um especialista.</p>
+              </div>
+            </div>
+            <div class="card" style="flex-direction: row; align-items: center; gap: 24px; padding: 24px;">
+              <div class="icon-wrapper" style="margin-bottom: 0; flex-shrink: 0;"><i class="fas fa-bolt"></i></div>
+              <div>
+                <h3 class="title-md" style="font-size: 1.1rem;">Zero Burocracia</h3>
+                <p>Processo de adesão e vistoria 100% digital pelo celular.</p>
+              </div>
+            </div>
+            <div class="card" style="flex-direction: row; align-items: center; gap: 24px; padding: 24px;">
+              <div class="icon-wrapper" style="margin-bottom: 0; flex-shrink: 0;"><i class="fas fa-wallet"></i></div>
+              <div>
+                <h3 class="title-md" style="font-size: 1.1rem;">Preço Justo</h3>
+                <p>Mensalidades que cabem no bolso, sem taxas surpresas.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -123,45 +142,46 @@
 
       <div class="coberturas-list">
         <div class="cobertura-item">
-          <i class="fas fa-mask fa-2x"></i>
+          <i class="fas fa-mask"></i>
           <div class="cobertura-content">
             <h4>Roubo e Furto</h4>
-            <p>Indenização rápida e sem enrolação caso o pior aconteça.</p>
+            <p>Indenização rápida e sem enrolação caso o pior aconteça com seu veículo.</p>
           </div>
         </div>
         <div class="cobertura-item">
-          <i class="fas fa-car-crash fa-2x"></i>
+          <i class="fas fa-car-crash"></i>
           <div class="cobertura-content">
             <h4>Colisão</h4>
-            <p>Cobertura para batidas, cobrindo seu carro e o de terceiros.</p>
+            <p>Cobertura completa para batidas, cobrindo seu carro e o de terceiros envolvidos.</p>
           </div>
         </div>
         <div class="cobertura-item">
-          <i class="fas fa-truck-pickup fa-2x"></i>
+          <i class="fas fa-truck-pickup"></i>
           <div class="cobertura-content">
             <h4>Guincho 24h</h4>
-            <p>Pane seca, elétrica ou mecânica? Nosso guincho vai até você.</p>
+            <p>Pane seca, elétrica ou mecânica? Nosso guincho vai até você em qualquer lugar do Brasil.</p>
           </div>
         </div>
         <div class="cobertura-item">
-          <i class="fas fa-tools fa-2x"></i>
+          <i class="fas fa-tools"></i>
           <div class="cobertura-content">
             <h4>Assistência 24h</h4>
-            <p>Chaveiro, troca de pneu e suporte total a qualquer hora do dia.</p>
+            <p>Serviços de chaveiro, troca de pneu, recarga de bateria e suporte total a qualquer hora.</p>
           </div>
         </div>
         <div class="cobertura-item">
-          <i class="fas fa-car fa-2x"></i>
+          <i class="fas fa-car"></i>
           <div class="cobertura-content">
             <h4>Carro Reserva</h4>
-            <p>Fique tranquilo, garantimos um carro extra enquanto o seu está arrumando.</p>
+            <p>Fique tranquilo, garantimos um carro extra enquanto o seu está em manutenção.</p>
           </div>
         </div>
         <div class="cobertura-item" style="border-color: var(--primary); background: var(--primary-light);">
-          <i class="fab fa-whatsapp fa-2x"></i>
+          <i class="fab fa-whatsapp"></i>
           <div class="cobertura-content">
             <h4 style="color: #00994E;">Montar meu plano</h4>
-            <a href="https://wa.me/5511988088214" target="_blank" style="color: var(--text-main); text-decoration: underline; font-weight: 600; font-size: 0.95rem;">Falar com consultor &rarr;</a>
+            <p style="margin-bottom: 12px; color: #000;">Fale com um de nossos consultores.</p>
+            <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Falar agora</a>
           </div>
         </div>
       </div>
@@ -177,32 +197,26 @@
       </div>
 
       <div class="steps-wrapper">
-        <div class="step-row">
+        <div class="step-card">
           <div class="step-number">1</div>
-          <div class="step-info">
-            <h3 class="title-md">Cotação via WhatsApp</h3>
-            <p>Clique em qualquer botão do site e fale com nosso time. Informando a placa do veículo, geramos seu orçamento na hora.</p>
-          </div>
+          <h3 class="title-md">Cotação via WhatsApp</h3>
+          <p>Clique em qualquer botão do site e informe a placa. Geramos seu orçamento na hora.</p>
         </div>
-        <div class="step-row">
+        <div class="step-card">
           <div class="step-number">2</div>
-          <div class="step-info">
-            <h3 class="title-md">Vistoria pelo Celular</h3>
-            <p>Você recebe um link seguro para tirar fotos do seu carro onde ele estiver. Não precisa ir até uma agência.</p>
-          </div>
+          <h3 class="title-md">Vistoria pelo Celular</h3>
+          <p>Você recebe um link seguro para tirar fotos do seu carro onde ele estiver, sem sair de casa.</p>
         </div>
-        <div class="step-row">
+        <div class="step-card">
           <div class="step-number">3</div>
-          <div class="step-info">
-            <h3 class="title-md">Proteção Ativada!</h3>
-            <p>Documentação aprovada? Você assina digitalmente e seu carro já está protegido. Simples assim.</p>
-          </div>
+          <h3 class="title-md">Proteção Ativada!</h3>
+          <p>Assine digitalmente e seu carro já está protegido a partir daquele exato momento.</p>
         </div>
       </div>
       
-      <div class="text-center mt-8" style="margin-top: 48px;">
-        <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-primary">
-          <i class="fab fa-whatsapp"></i> Iniciar meu cadastro
+      <div class="text-center" style="margin-top: 64px;">
+        <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-primary" style="padding: 20px 40px; font-size: 1.1rem;">
+          <i class="fab fa-whatsapp"></i> Quero ativar minha proteção
         </a>
       </div>
     </div>
@@ -213,7 +227,7 @@
     <div class="container">
       <div class="text-center">
         <div class="section-badge" style="background: var(--primary-light); color: #00994E;">Prova Social</div>
-        <h2 class="title-lg">Quem confia, recomenda.</h2>
+        <h2 class="title-lg">O seguro mais querido do Brasil</h2>
       </div>
 
       <div class="testimonials">
@@ -230,7 +244,7 @@
         </div>
         <div class="testimonial-card">
           <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="testimonial-text">"Sou motorista de app e não posso ficar com o carro parado. Precisei de guincho de madrugada e me atenderam super bem e rápido. Excelente."</p>
+          <p class="testimonial-text">"Sou motorista de app e não posso ficar com o carro parado. Precisei de guincho de madrugada e me atenderam super bem e rápido. Excelente serviço."</p>
           <div class="author">
             <div class="author-avatar">RS</div>
             <div class="author-info">
@@ -255,12 +269,12 @@
   </section>
 
   <!-- CTA FINAL -->
-  <section class="cta-section">
+  <section class="section" style="padding: 120px 0;">
     <div class="container">
       <div class="cta-box">
         <h2 class="title-xl mb-4">Pronto para rodar tranquilo?</h2>
-        <p class="mb-8">Fale com a gente agora, sem compromisso, e veja como é fácil e barato proteger seu patrimônio.</p>
-        <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-dark" style="transform: scale(1.1);">
+        <p>Fale com a gente agora, sem compromisso, e veja como é fácil e acessível proteger seu patrimônio hoje mesmo.</p>
+        <a href="https://wa.me/5511988088214" target="_blank" class="btn btn-dark" style="transform: scale(1.1); font-size: 1.2rem;">
           <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Fazer cotação gratuita
         </a>
       </div>
@@ -272,12 +286,12 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <!-- invert to make it dark if original logo is white -->
-          <img src="logo.png" alt="INTCAR" style="filter: invert(1); height: 48px;" />
-          <p>A proteção veicular inteligente para quem valoriza tempo, dinheiro e segurança.</p>
+          <!-- Logo normal sem filtros -->
+          <img src="logo.png" alt="INTCAR" />
+          <p>A proteção veicular inteligente para quem valoriza tempo, dinheiro e segurança acima de tudo.</p>
         </div>
         <div>
-          <h4 class="title-md mb-4" style="font-size: 1.1rem;">Links Úteis</h4>
+          <h4 class="title-md mb-4" style="font-size: 1.2rem;">Links Úteis</h4>
           <div class="footer-links">
             <a href="#sobre">Por que INTCAR?</a>
             <a href="#coberturas">Nossas Coberturas</a>
@@ -286,7 +300,7 @@
           </div>
         </div>
         <div>
-          <h4 class="title-md mb-4" style="font-size: 1.1rem;">Contato</h4>
+          <h4 class="title-md mb-4" style="font-size: 1.2rem;">Contato</h4>
           <div class="footer-links">
             <a href="https://wa.me/5511988088214" target="_blank"><i class="fab fa-whatsapp"></i> (11) 98808-8214</a>
             <a href="https://instagram.com/_intcar_" target="_blank"><i class="fab fa-instagram"></i> @_intcar_</a>
@@ -296,7 +310,7 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2025 INTCAR Proteção Veicular. Todos os direitos reservados.</p>
-        <p style="font-size: 0.8rem; margin-top: 8px;">A INTCAR é uma associação de proteção veicular e não se caracteriza como seguradora.</p>
+        <p style="font-size: 0.85rem; margin-top: 8px;">A INTCAR é uma associação de proteção veicular e não se caracteriza como seguradora.</p>
       </div>
     </div>
   </footer>
