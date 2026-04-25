@@ -1,161 +1,70 @@
-/* ===========================
-   INTCAR – Scripts
-   =========================== */
-
-// ── NAV SCROLL ──────────────────────────────────────────
-const nav = document.getElementById('nav');
+// Header Scroll Effect
+const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    nav.classList.add('scrolled');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
   } else {
-    nav.classList.remove('scrolled');
-  }
-}, { passive: true });
-
-// ── HAMBURGER MENU ──────────────────────────────────────
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-  const spans = hamburger.querySelectorAll('span');
-  if (mobileMenu.classList.contains('open')) {
-    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-    spans[1].style.opacity = '0';
-    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-  } else {
-    spans[0].style.transform = '';
-    spans[1].style.opacity = '';
-    spans[2].style.transform = '';
+    header.classList.remove('scrolled');
   }
 });
 
-// Close on link click
-mobileMenu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    const spans = hamburger.querySelectorAll('span');
-    spans[0].style.transform = '';
-    spans[1].style.opacity = '';
-    spans[2].style.transform = '';
-  });
-});
-
-// ── SCROLL REVEAL ───────────────────────────────────────
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, {
-  threshold: 0.12,
-  rootMargin: '0px 0px -40px 0px'
-});
-
-document.querySelectorAll('.reveal').forEach(el => {
-  revealObserver.observe(el);
-});
-
-// Trigger hero reveals on load
-window.addEventListener('load', () => {
-  document.querySelectorAll('.hero .reveal').forEach((el, i) => {
-    setTimeout(() => el.classList.add('visible'), 200 + i * 120);
-  });
-});
-
-// ── FAQ ACCORDION ───────────────────────────────────────
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-
-  // Close all
-  document.querySelectorAll('.faq-item.open').forEach(el => {
-    el.classList.remove('open');
-  });
-
-  // Toggle current
-  if (!isOpen) {
-    item.classList.add('open');
-  }
-}
-
-// ── SMOOTH SCROLL FOR ANCHOR LINKS ──────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const href = a.getAttribute('href');
-    if (href === '#') return;
-    const target = document.querySelector(href);
+// Smooth Scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
+      window.scrollTo({
+        top: target.offsetTop - 80, // account for fixed header
+        behavior: 'smooth'
+      });
     }
   });
 });
 
-// ── COBERTURA CARD HOVER SOUND EFFECT (VISUAL) ──────────
-document.querySelectorAll('.cobertura-card, .veiculo-card, .depo-card').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    card.style.willChange = 'transform';
-  });
-  card.addEventListener('mouseleave', () => {
-    card.style.willChange = '';
-  });
-});
-
-// ── WHATSAPP FLOAT VISIBILITY ───────────────────────────
-const waFloat = document.querySelector('.whatsapp-float');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-  const current = window.scrollY;
-  if (current > 300) {
-    waFloat.style.opacity = '1';
-    waFloat.style.transform = current > lastScroll ? 'translateY(0)' : 'translateY(-3px)';
-  } else {
-    waFloat.style.opacity = '1';
-  }
-  lastScroll = current;
-}, { passive: true });
-
-// ── COUNTER ANIMATION ────────────────────────────────────
-function animateCounter(el, target, suffix = '') {
-  const isPlus = suffix.startsWith('+') || el.textContent.startsWith('+');
-  const num = parseInt(target);
-  const duration = 1800;
-  const step = 16;
-  const increments = duration / step;
-  const increment = num / increments;
-  let current = 0;
-
-  const prefix = isPlus ? '+' : '';
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= num) {
-      current = num;
-      clearInterval(timer);
+// Simple animate counter for stats
+function animateValue(obj, start, end, duration, suffix = '') {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    // Ease out quart
+    const easeProgress = 1 - Math.pow(1 - progress, 4);
+    
+    let current = Math.floor(easeProgress * (end - start) + start);
+    if(end > 1000) {
+      obj.innerHTML = current.toLocaleString('pt-BR') + suffix;
+    } else {
+      obj.innerHTML = current + suffix;
     }
-    el.textContent = prefix + Math.round(current).toLocaleString('pt-BR') + suffix;
-  }, step);
+    
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
 }
 
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const stats = entry.target.querySelectorAll('.stat-num');
-      stats.forEach(stat => {
-        const text = stat.textContent;
-        if (text.includes('67.000')) animateCounter(stat, 67000, '');
-        else if (text.includes('98')) animateCounter(stat, 98, '%');
-        else if (text.includes('24')) { /* static */ }
-      });
-      statsObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
+// Trigger animation on load for Hero Stats
+document.addEventListener("DOMContentLoaded", () => {
+  const statVehicles = document.getElementById('stat-vehicles');
+  const statRating = document.getElementById('stat-rating');
+  
+  if(statVehicles) animateValue(statVehicles, 0, 67000, 2500, '+');
+  if(statRating) animateValue(statRating, 0, 98, 2000, '%');
+});
 
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) statsObserver.observe(heroStats);
+// WhatsApp Facebook Pixel Tracking
+document.addEventListener("DOMContentLoaded", function () {
+  var links = document.querySelectorAll('a[href*="wa.me"]');
+  links.forEach(function(link) {
+    link.addEventListener("click", function() {
+      if (typeof fbq !== "undefined") {
+        fbq('track', 'Lead', {
+          content_name: 'WhatsApp Click'
+        });
+      }
+    });
+  });
+});
